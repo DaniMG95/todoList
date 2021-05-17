@@ -11,7 +11,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-const url = "mongodb+srv://admin-dani:brudi16595@cluster0.rbabv.mongodb.net"
+const url = "mongodb+srv://admin-dani:"+process.env.PASSWORD+"@cluster0.rbabv.mongodb.net"
 const dbName = "todolistDB"
 mongoose.connect(url+"/"+dbName,{useNewUrlParser: true, useUnifiedTopology: true})
 
